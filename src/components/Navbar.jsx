@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import NavLink from "../components/NavLink";
 const links = [
   { url: "/", title: "Home" },
   { url: "/about", title: "About" },
@@ -18,14 +18,12 @@ const Navbar = () => {
       {/* links */}
       <div className="hidden md:flex gap-4 w-1/3">
         {links.map((link) => (
-          <Link href={link.url} key={link.title}>
-            {link.title}
-          </Link>
+          <NavLink link={link} key={link.title}></NavLink>
         ))}
       </div>
 
       {/* logo */}
-      <div className="md:hidden lg:flex w-1/3 ">
+      <div className="md:hidden lg:flex xl:w-1/3 ">
         <Link
           href="/"
           className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center"
